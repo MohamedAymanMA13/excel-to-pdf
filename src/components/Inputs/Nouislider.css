@@ -1,0 +1,19 @@
+.noUi-handle,
+.noUi-horizontal .noUi-handle {
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  top: -10px;
+  &::before {
+    display: none;
+  }
+  &::after {
+    display: none;
+  }
+}
+.noUi-horizontal {
+  height: 5px;
+}
+.noUi-connect {
+  background: #afafaf;
+}

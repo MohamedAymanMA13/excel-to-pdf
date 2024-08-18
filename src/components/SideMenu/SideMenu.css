@@ -1,0 +1,69 @@
+.SideMenu {
+  box-shadow: 5px 5px 20px #00000008;
+  top: 0;
+  position: sticky;
+}
+.SideMenu .header {
+  height: 60px;
+}
+.SideMenu .menu {
+  max-height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
+  height: 100%;
+  overflow: auto;
+}
+.SideMenu .menu .LinkPage p {
+  opacity: 1;
+  height: auto;
+  width: auto;
+  overflow: auto;
+  transition: opacity 1s;
+  
+}
+.SideMenu .menu .active .LinkPage {
+  background-color: #21A77A;
+  border-radius: 5px;
+  color: #fff;
+}
+.SideMenu .menu  .LinkPage {
+  background-color: #fafafa;
+  border-radius: 5px;
+  color: #000;
+}
+.SideMenu .menu .active .LinkPage img {
+  filter: invert(100%) sepia(0%) saturate(7475%) hue-rotate(66deg) brightness(108%) contrast(98%);
+}
+.w-5 .SideMenu {
+  box-shadow: 5px 5px 20px #00000008;
+}
+.w-5 .SideMenu .logo {
+  display: none;
+}
+.w-5 .SideMenu .LinkPage {
+  text-align: center;
+  display: block !important;
+}
+.w-5 .SideMenu .LinkPage img {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.w-5 .SideMenu .LinkPage p {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  /* display: none; */
+  transition: all 1.5s;
+}
+.w-5 .SideMenu .active .LinkPage {
+  background-color: #21A77A;
+  border-radius: 5px;
+  color: #fff;
+}
+.w-5 .SideMenu .active .LinkPage img {
+  filter: invert(100%) sepia(0%) saturate(7475%) hue-rotate(66deg) brightness(108%) contrast(98%);
+}

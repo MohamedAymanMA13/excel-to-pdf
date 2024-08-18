@@ -1,0 +1,100 @@
+/* @import './../../Variables.scss'; */
+
+.scroll-table {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.scroll-table-x {
+  overflow-x: auto !important;
+  overflow-y: auto;
+}
+
+.scroll-table::-moz-scrollbar {
+  margin: 5px;
+  width: 10px;
+  height: 10px;
+}
+table {
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0 7px;
+  vertical-align: middle;
+
+  th,
+  thead,
+  tbody,
+  td {
+    border: none;
+    vertical-align: middle;
+  }
+  thead {
+    background-color: #fafafa !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  th {
+    padding: 0;
+    position: sticky !important ;
+    top: 0px !important ;
+    z-index: 40 !important;
+    background-color: #fafafa !important;
+    white-space: nowrap;
+    text-align: center;
+
+     /* box-shadow: 2px 2px 4px #00000029 !important; */
+  }
+  tbody {
+    padding: 0 !important;
+    td {
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
+    }
+    tr {
+      border: none !important;
+      background-color: #fff !important;
+      box-shadow: 2px 2px 4px #00000029;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+}
+thead th {
+  .checkmark {
+    margin: 0 0px !important;
+    border: 2px solid #fff;
+    background-color: #306c95;
+  }
+}
+body td .checkboxContainer {
+  display: block;
+  position: relative;
+  margin: 0px 16px !important;
+}
+
+/* // input:checked + .slider {
+//   background-color: #2196F3;
+// } */
+input[value='checked'] + .slider {
+  background-color: #2196f3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input[value='false'] + .slider:before {
+  -webkit-transform: translateX(0px) !important;
+  -ms-transform: translateX(0px) !important;
+  transform: translateX(0px) !important;
+}
+/* // input:checked + .slider:before {
+//   -webkit-transform: translateX(20px);
+//   -ms-transform: translateX(20px);
+//   transform: translateX(20px);
+// } */
+
+input[value='checked'] + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
