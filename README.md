@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Spreadsheet to PDF Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application for reading spreadsheet rows, previewing them in a table and filling PDF templates in the browser. It also includes a form-input route for PDF generation.
 
-## Available Scripts
+## Implementation
 
-In the project directory, you can run:
+- Spreadsheet parsing with SheetJS (`xlsx`).
+- PDF loading, text placement and font handling with `pdf-lib` and fontkit.
+- ZIP packaging of generated files with JSZip and file-saver.
+- Right-to-left layout and Arabic number-to-words support.
+- Separate spreadsheet and form-input pages.
 
-### `npm start`
+## Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React 18, JavaScript, React Router 6, Bootstrap 5, SheetJS, pdf-lib and JSZip.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Run locally
 
-### `npm test`
+Requires Node.js and npm. From the repository directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install
+npm start
+```
 
-### `npm run build`
+Open `http://localhost:3000`. The app routes to `/home`; `/home2` contains the form-input flow.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm run build
+npm test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+These are the configured scripts, not a claim that a fresh build or test run has passed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Source guide
 
-### `npm run eject`
+- `src/pages/ExcelToPdf.jsx`: spreadsheet processing and template filling.
+- `src/pages/InputToPdf.jsx`: form-input flow.
+- `src/components/TableComponents/`: preview table.
+- `src/App.js`: routes and layout.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Data and template safety
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The current mappings and PDF layouts are specific to the bundled templates, not a universal spreadsheet converter. Use synthetic sample rows only. Review templates and outputs for personal or financial information before sharing, and never upload real customer records to a portfolio demo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Attribution
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The source contains the `tafqit` Arabic number-to-words function by Mohsen Alyafei, with its existing MIT attribution. Keep that attribution when reusing the function.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This repository is an implementation example, not a production-ready financial document service.
